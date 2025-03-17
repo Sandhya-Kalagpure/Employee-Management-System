@@ -1,0 +1,17 @@
+<div class="summary-form">
+    <h2>Attendance Summary</h2>
+  
+    <div class="form-group">
+      <label for="employeeId">Employee ID:</label>
+      <input type="number" [(ngModel)]="employeeId" placeholder="Enter Employee ID" />
+    </div>
+  
+    <button (click)="getAttendanceSummary()">Get Summary</button>
+  
+    <div *ngIf="summary">
+      <p><strong>Employee ID:</strong> {{ summary.employeeId }}</p>
+      <p><strong>Total Present Days:</strong> {{ summary.totalPresentDays }}</p>
+      <p><strong>Total Payment:</strong> ₹{{ summary.payment | number: '1.2-2' }}</p>
+    </div>
+  </div>
+  

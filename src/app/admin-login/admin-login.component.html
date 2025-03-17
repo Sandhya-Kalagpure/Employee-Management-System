@@ -1,0 +1,38 @@
+<form (ngSubmit)="onLogin()" #loginForm="ngForm" class="form-container container-sm">
+
+  <!-- Admin Email -->
+  <div class="form-group">
+      <label for="adminName"><b>Email</b></label>
+      <input type="email" class="form-control" id="adminName"       
+          [(ngModel)]="adminData.adminName"
+          name="adminName"
+          required
+          #adminName="ngModel"
+          [ngClass]="{ 'is-invalid': loginForm.submitted && adminName.errors }" /> 
+      <div *ngIf="loginForm.submitted && adminName.errors" class="invalid-feedback">
+          <div *ngIf="adminName.errors?.['required']">Email is required</div>
+          <div *ngIf="adminName.invalid">Invalid email format</div>
+      </div>
+  </div>
+
+  <!-- Admin Password -->
+  <div class="form-group">
+      <label for="adminPassword"><b>Password</b></label>
+      <input type="password" class="form-control" id="adminPassword"
+          [(ngModel)]="adminData.adminPassword"
+          name="adminPassword" 
+          required
+          autocomplete="current-password" 
+          #adminPassword="ngModel"
+          [ngClass]="{ 'is-invalid': loginForm.submitted && adminPassword.errors }" /> 
+      <div *ngIf="loginForm.submitted && adminPassword.errors" class="invalid-feedback">
+          <div *ngIf="adminPassword.errors?.['required']">Password is required</div>
+      </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="form-group">
+      <button class="btn btn-primary" type="submit">Login</button>
+      <button class="btn btn-secondary" type="button" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

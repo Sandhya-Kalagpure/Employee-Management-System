@@ -1,0 +1,63 @@
+<div class="payroll-form">
+  <form (ngSubmit)="calculatePayroll()" class="form-container">
+    <!-- Employee ID -->
+    <div class="form-group">
+      <label for="employeeId">Employee ID:</label>
+      <input 
+        type="number" 
+        id="employeeId" 
+        [(ngModel)]="payroll.employeeId" 
+        name="employeeId" 
+        placeholder="Enter Employee ID" 
+        required />
+    </div>
+
+    <!-- Base Salary -->
+    <div class="form-group">
+      <label for="baseSalary">Base Salary:</label>
+      <input 
+        type="number" 
+        id="baseSalary" 
+        [(ngModel)]="payroll.baseSalary" 
+        name="baseSalary"
+        placeholder="Enter Base Salary" 
+        required />
+    </div>
+
+    <!-- Bonus -->
+    <div class="form-group">
+      <label for="bonus">Bonus:</label>
+      <input 
+        type="number" 
+        id="bonus" 
+        [(ngModel)]="payroll.bonus" 
+        name="bonus"
+        placeholder="Enter Bonus (Optional)" />
+    </div>
+
+    <!-- Deductions -->
+    <div class="form-group">
+      <label for="deductions">Deductions:</label>
+      <input 
+        type="number" 
+        id="deductions" 
+        [(ngModel)]="payroll.deductions" 
+        name="deductions"
+        placeholder="Enter Deductions (Optional)" />
+    </div>
+
+    <!-- Pay Date -->
+    <div class="form-group">
+      <label for="payDate">Pay Date:</label>
+      <input 
+        type="date" 
+        id="payDate" 
+        [(ngModel)]="payroll.payDate" 
+        name="payDate"
+        required />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Submit Payroll</button>
+  </form>
+</div>
